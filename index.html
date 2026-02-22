@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Calendar</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Splash -->
+<div id="splash">
+  <img src="assets/logo.png">
+  <h2>Created by Shahbaz5</h2>
+</div>
+
+<!-- Welcome -->
+<div id="main" class="screen">
+  <h1>Welcome 👑<br>To Premium Calendar 📆</h1>
+  <button onclick="openMenu()">Start</button>
+</div>
+
+<!-- Menu -->
+<div id="menu" class="screen">
+  <h2>Choose Calendar 📆</h2>
+  <button onclick="openNormal()">Normal Calendar 📅</button>
+  <button onclick="openIslamicMenu()">Islamic Calendar 🌙</button>
+</div>
+
+<!-- Normal Calendar -->
+<div id="normalScreen" class="screen">
+  <div class="app">
+
+    <div class="header">
+      <button onclick="changeMonth(-1)">◀</button>
+      <h2 id="monthYear"></h2>
+      <button onclick="changeMonth(1)">▶</button>
+    </div>
+
+    <div class="clock" id="clock"></div>
+
+    <div class="weekdays">
+      <div>Sun</div><div>Mon</div><div>Tue</div>
+      <div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+    </div>
+
+    <div class="days" id="days"></div>
+
+    <div class="theme-buttons">
+      <div style="background:#00c6ff" onclick="setTheme('#00c6ff')"></div>
+      <div style="background:#9c27b0" onclick="setTheme('#9c27b0')"></div>
+      <div style="background:#4caf50" onclick="setTheme('#4caf50')"></div>
+      <div style="background:#f44336" onclick="setTheme('#f44336')"></div>
+      <div style="background:#ff9800" onclick="setTheme('#ff9800')"></div>
+    </div>
+
+    <div class="history" id="history"></div>
+    <div class="footer">Created by Shahbaz5</div>
+
+  </div>
+  <button onclick="goBack()">⬅ Back</button>
+</div>
+
+<!-- Islamic Menu -->
+<div id="islamMenu" class="screen">
+  <h2>Islamic Calendar 🌙</h2>
+  <button onclick="openIslamicCalendar()">Calendar</button>
+  <button onclick="openRamzanCard()">Ramzan Card</button>
+  <button onclick="goBack()">⬅ Back</button>
+</div>
+
+<!-- Islamic Calendar Screen -->
+<div id="islamCalendarScreen" class="screen">
+  <h2>Islamic Calendar 🌙</h2>
+  <p style="opacity:.7">Coming Soon.....☺️</p>
+  <button onclick="openIslamicMenu()">⬅ Back</button>
+</div>
+
+<!-- Ramzan Card Screen -->
+<div id="ramzanScreen" class="screen">
+  <div style="text-align:center;">
+    <div class="ramzan-container">
+  <img src="assets/ramzan-card.png" class="ramzan-img">
+</div>
+    <h2>Ramzan Mubarak 🌙</h2>
+  </div>
+  <button onclick="openIslamicMenu()">⬅ Back</button>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <input type="text" id="eventTitle" placeholder="Event Title">
+  <input type="time" id="eventTime">
+  <select id="eventType">
+    <option value="normal">Normal</option>
+    <option value="birthday">Birthday 🎂</option>
+  </select>
+  <button onclick="saveEvent()">Save Event</button>
+  <button onclick="deleteEvent()">Delete Event</button>
+  <button onclick="closeModal()">Cancel</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
