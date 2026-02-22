@@ -6,6 +6,17 @@
 <link rel="stylesheet" href="style.css">
 </head>
 
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+    .then(function() {
+      console.log("Service Worker Registered");
+    });
+}
+</script>
+
+</body>
+</html>
 <body>
 
 <!-- Splash -->
@@ -102,4 +113,5 @@
 
 <script src="script.js"></script>
 </body>
+
 </html>
